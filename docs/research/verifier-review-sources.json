@@ -1,0 +1,524 @@
+{
+  "checked_at": "2026-10-19",
+  "method": "First-party source inspection. GitHub cached source bytes verified against tree blob hashes; four HF model/code snapshots verified against pinned revisions. Dynamic docs are dated snapshots, not immutable claims. No model calls or model-weight downloads.",
+  "scope": "Selected relevant projects, not an exhaustive systematic review. Upstream benchmark results and model latency/memory claims not independently reproduced.",
+  "sources": [
+    {
+      "id": "O1",
+      "url": "https://github.com/echo0715/OpenComputer/blob/76c5ec32221045a68c4ca47a799e0abc4b303d6a/verifiers/libreoffice_writer/libreoffice_writer.py",
+      "snapshot_sha256": "83215f785f996f0fcf74b49ec35e4caa8fc0da62804d1352e8fa2e5edf7e2f5e",
+      "bytes": 45473,
+      "commit": "76c5ec32221045a68c4ca47a799e0abc4b303d6a",
+      "path": "verifiers/libreoffice_writer/libreoffice_writer.py",
+      "git_blob_sha1": "4e871123eb4c4b71046af534b2afa5d35f01c032",
+      "pinned_blob_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "O2",
+      "url": "https://github.com/echo0715/OpenComputer/blob/76c5ec32221045a68c4ca47a799e0abc4b303d6a/task_generator/tasks/libreoffice_writer_meeting_minutes/task.json",
+      "snapshot_sha256": "a464f56f8346249d506492656f25a06292e5e723d8b17d666e0c210273bce3dc",
+      "bytes": 2494,
+      "commit": "76c5ec32221045a68c4ca47a799e0abc4b303d6a",
+      "path": "task_generator/tasks/libreoffice_writer_meeting_minutes/task.json",
+      "git_blob_sha1": "f8c62356bcb2d3de7ed9d225f2df7f1a3e669020",
+      "pinned_blob_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "O3",
+      "url": "https://github.com/echo0715/OpenComputer/blob/76c5ec32221045a68c4ca47a799e0abc4b303d6a/evaluation/runtime/verification.py",
+      "snapshot_sha256": "b07f3158f693dfad9c5032ac0e851abd427d3401451646464cda4573182c3ce5",
+      "bytes": 10398,
+      "commit": "76c5ec32221045a68c4ca47a799e0abc4b303d6a",
+      "path": "evaluation/runtime/verification.py",
+      "git_blob_sha1": "f60298954aeffcc7cecccbfc9f0292c8a4589fff",
+      "pinned_blob_verified": true,
+      "line_anchors": {
+        "def verify_task": [
+          181
+        ],
+        "time.sleep(3)": [
+          182
+        ],
+        "eval(check": [
+          198
+        ],
+        "_llm_identify_steps(trajectory_text": [
+          72,
+          232
+        ]
+      }
+    },
+    {
+      "id": "O4",
+      "url": "https://github.com/echo0715/OpenComputer/tree/76c5ec32221045a68c4ca47a799e0abc4b303d6a/smoke"
+    },
+    {
+      "id": "S1",
+      "url": "https://github.com/xlang-ai/OSWorld/tree/b138d348256078fa634fc3b73567a7337c793e6b/desktop_env/evaluators"
+    },
+    {
+      "id": "S2",
+      "url": "https://github.com/xlang-ai/OSWorld/blob/b138d348256078fa634fc3b73567a7337c793e6b/desktop_env/desktop_env.py",
+      "snapshot_sha256": "ff73a546074d4cf3b13259f7261a82af5c3f6942bde27101aa74e58da70d84c1",
+      "bytes": 24585,
+      "commit": "b138d348256078fa634fc3b73567a7337c793e6b",
+      "path": "desktop_env/desktop_env.py",
+      "git_blob_sha1": "cdaf07a668243bf1e2adaf6ff9cf03ab82fdb18b",
+      "pinned_blob_verified": true,
+      "line_anchors": {
+        "def evaluate": [
+          458
+        ],
+        "postconfig =": [
+          463
+        ]
+      }
+    },
+    {
+      "id": "D1",
+      "url": "https://github.com/icip-cas/DocOps/blob/ccf7a751bc5c8a69c1cdd0400125d53455b33be3/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/verifier_utils.py",
+      "snapshot_sha256": "d1a084507ea7aa1ae001c6c8b33f6505cad4ccb51cd372d10323fe5d63d93e78",
+      "bytes": 14389,
+      "commit": "ccf7a751bc5c8a69c1cdd0400125d53455b33be3",
+      "path": "tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/verifier_utils.py",
+      "git_blob_sha1": "352e0f762909d1953682b30e0bf3fed067395708",
+      "pinned_blob_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "D2",
+      "url": "https://github.com/icip-cas/DocOps/blob/ccf7a751bc5c8a69c1cdd0400125d53455b33be3/tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test_outputs.py",
+      "snapshot_sha256": "37232616c07d64d07d4a336bed6c5d3af3e31908e8b804d15302c916f7fb9a09",
+      "bytes": 2161,
+      "commit": "ccf7a751bc5c8a69c1cdd0400125d53455b33be3",
+      "path": "tasks/atomic__word_001_engineering_report_toc_hierarchy_seed/tests/test_outputs.py",
+      "git_blob_sha1": "c9271d1f3eeffaa97ee8e08139614630bcb1c1d9",
+      "pinned_blob_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "C1",
+      "url": "https://github.com/xlang-ai/CUA-Gym/blob/1e50b797200f8afd6f11ca8e3ee04412de97b0f2/.claude/agents/reward-gen.md",
+      "snapshot_sha256": "fd17221a942c6c8cf3f1277aa362746e6a9d9cd9076875137d3954ed804a6810",
+      "bytes": 30310,
+      "commit": "1e50b797200f8afd6f11ca8e3ee04412de97b0f2",
+      "path": ".claude/agents/reward-gen.md",
+      "git_blob_sha1": "237d4013aa0b55bd450638953e1e675bf87512f3",
+      "pinned_blob_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "C2",
+      "url": "https://github.com/xlang-ai/CUA-Gym/blob/1e50b797200f8afd6f11ca8e3ee04412de97b0f2/utils/reward_judge.py",
+      "snapshot_sha256": "13ae664cb8624225aaba960edd674111c6c8c2378472c645c5ed059565c04c7e",
+      "bytes": 14123,
+      "commit": "1e50b797200f8afd6f11ca8e3ee04412de97b0f2",
+      "path": "utils/reward_judge.py",
+      "git_blob_sha1": "b5d2acde6fccb176a04c55ae8cc4f9987c25d67a",
+      "pinned_blob_verified": true,
+      "line_anchors": {
+        "_MODEL =": [
+          38,
+          39
+        ],
+        "_VISION_MODEL =": [
+          39
+        ],
+        "_MAX_RETRIES =": [
+          41
+        ],
+        "state_excerpt[:6000]": [
+          96
+        ],
+        "for attempt in range": [
+          102,
+          269,
+          366
+        ],
+        "return 0.0": [
+          86,
+          135,
+          238,
+          244,
+          301,
+          334,
+          339,
+          346,
+          398
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "url": "https://github.com/xlang-ai/CUA-Gym/blob/1e50b797200f8afd6f11ca8e3ee04412de97b0f2/filter/majority_vote_filter.py",
+      "snapshot_sha256": "0d9fea4086ff33add8d4e2567fc4b6a6efe674a0150198bd5bd903b4a678b09c",
+      "bytes": 13042,
+      "commit": "1e50b797200f8afd6f11ca8e3ee04412de97b0f2",
+      "path": "filter/majority_vote_filter.py",
+      "git_blob_sha1": "44386704af99cd92e8b802c7dfd48a820847c641",
+      "pinned_blob_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "V1",
+      "url": "https://github.com/THUDM/SCALE-CUA/blob/3929e2fe364623153f2caa94ead71dc1aea50fb0/VeriGen/src/agent/osworld/llm_judge.py",
+      "snapshot_sha256": "8a7155b0e45b41b3e50102cebed629859f959b27cb2fbd4f0d710b06e39cb6dd",
+      "bytes": 8729,
+      "commit": "3929e2fe364623153f2caa94ead71dc1aea50fb0",
+      "path": "VeriGen/src/agent/osworld/llm_judge.py",
+      "git_blob_sha1": "a5c839b9c03ede4584d03942d32bb80df63b2065",
+      "pinned_blob_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "V2",
+      "url": "https://github.com/THUDM/SCALE-CUA/blob/3929e2fe364623153f2caa94ead71dc1aea50fb0/VeriGen/src/agent/osworld/llm_fix.py",
+      "snapshot_sha256": "8baf46981bfb204628f877e7a48055643d84a956319b99bfc09e604aa50d0576",
+      "bytes": 7663,
+      "commit": "3929e2fe364623153f2caa94ead71dc1aea50fb0",
+      "path": "VeriGen/src/agent/osworld/llm_fix.py",
+      "git_blob_sha1": "f7f617c70ae63bb2be90a947bd6d2bb6c213f7f1",
+      "pinned_blob_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "P1",
+      "url": "https://github.com/PrimeIntellect-ai/verifiers/blob/266c21963d8368d2e9faaf79d61046daad018c9f/verifiers/v1/judges/decision.py",
+      "snapshot_sha256": "425a4b3361592debc15ab300c9476759a9a95052a918484229472e73042d3989",
+      "bytes": 3991,
+      "commit": "266c21963d8368d2e9faaf79d61046daad018c9f",
+      "path": "verifiers/v1/judges/decision.py",
+      "git_blob_sha1": "db9eb33df47e9958a36219f7642d71a64e4e24b0",
+      "pinned_blob_verified": true,
+      "line_anchors": {
+        "class DecisionJudgeConfig": [
+          22
+        ],
+        "model: str": [
+          24
+        ],
+        "base_url: str": [
+          25
+        ],
+        "view: JudgeView": [
+          36
+        ],
+        "async def evaluate": [
+          45
+        ],
+        "record_judge_call": [
+          82
+        ]
+      }
+    },
+    {
+      "id": "P2",
+      "url": "https://github.com/PrimeIntellect-ai/verifiers/blob/266c21963d8368d2e9faaf79d61046daad018c9f/verifiers/v1/judges/rubric.py",
+      "snapshot_sha256": "1c6418237c5dabc23ce027b4fec0de36093924ce7dedeb3cace54f8a98c2cb15",
+      "bytes": 12025,
+      "commit": "266c21963d8368d2e9faaf79d61046daad018c9f",
+      "path": "verifiers/v1/judges/rubric.py",
+      "git_blob_sha1": "e2c551e3a4863b303fab4dcbed38a67f1288bb3c",
+      "pinned_blob_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "P3",
+      "url": "https://github.com/PrimeIntellect-ai/verifiers/blob/266c21963d8368d2e9faaf79d61046daad018c9f/docs/building-environments.md"
+    },
+    {
+      "id": "W1",
+      "url": "https://github.com/ServiceNow/WorkArena/blob/e885130962f61fb64ac305497996a46cfc7d18f0/src/browsergym/workarena/tasks/form.py",
+      "snapshot_sha256": "01c6a487782d727841552a2922c6bbac53329ddb2e8aad70cc35195e142c387b",
+      "bytes": 67129,
+      "commit": "e885130962f61fb64ac305497996a46cfc7d18f0",
+      "path": "src/browsergym/workarena/tasks/form.py",
+      "git_blob_sha1": "ac3adcb561307ece3bd90419011b87ed70be3658",
+      "pinned_blob_verified": true,
+      "line_anchors": {
+        "def validate": [
+          827,
+          1167
+        ],
+        "max_retries=20": [
+          896
+        ]
+      }
+    },
+    {
+      "id": "B1",
+      "url": "https://github.com/zlwang-cs/OfficeBench/blob/b978b808667c32b52ce19a67ce1def1de9ae02b7/utils/evaluate.py",
+      "snapshot_sha256": "f4a675a590a57844fd21d6d6660a00d8c69661b0f92dc26146f9b8869a26cc90",
+      "bytes": 9693,
+      "commit": "b978b808667c32b52ce19a67ce1def1de9ae02b7",
+      "path": "utils/evaluate.py",
+      "git_blob_sha1": "aacb365eec397bb4f3ea4e7bd5e165b79e3402f2",
+      "pinned_blob_verified": true,
+      "line_anchors": {
+        "def _evaluate_contain_text": [
+          24
+        ],
+        "def evaluate_not_contain": [
+          73
+        ]
+      }
+    },
+    {
+      "id": "X1",
+      "url": "https://github.com/VyomKulshrestha/Heliox-OS/blob/a2f72421566d0ebd14e8f96a394011dfc4372547/daemon/pilot/agents/verifier.py",
+      "snapshot_sha256": "8bb9946f7a7e0c29abd2adaa41268f155f2d5ebb532d9d2aacdeff2062b33c8a",
+      "bytes": 20347,
+      "commit": "a2f72421566d0ebd14e8f96a394011dfc4372547",
+      "path": "daemon/pilot/agents/verifier.py",
+      "git_blob_sha1": "39506a9afbb83ba30dbedacc5ed7dc080ffc266a",
+      "pinned_blob_verified": true,
+      "line_anchors": {
+        "No independent postcondition": [
+          238
+        ],
+        "REPORTED": [
+          153
+        ]
+      }
+    },
+    {
+      "id": "J1",
+      "url": "https://docs.typesafe.ai/models",
+      "snapshot_sha256": "02b7682a7176d2d6649a2fa4588df45cbbaa3c3460f721828d632a7577e606df",
+      "bytes": 7971,
+      "snapshot_url": "https://docs.typesafe.ai/models.md",
+      "line_anchors": {
+        "Price (per": [
+          14
+        ],
+        "Jev 1.14 is": [
+          18
+        ],
+        "Language support": [
+          85
+        ]
+      }
+    },
+    {
+      "id": "J2",
+      "url": "https://docs.typesafe.ai/confidence",
+      "snapshot_sha256": "5c325ec0c0b69e78129406ca7c5d3aef113bce365abd34985b8674cd278c81be",
+      "bytes": 24090,
+      "snapshot_url": "https://docs.typesafe.ai/confidence.md",
+      "line_anchors": {}
+    },
+    {
+      "id": "J3",
+      "url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13",
+      "snapshot_sha256": "ae4e822c759ce6665553a676c7bfa9371374e02685b4dacb1851a330875e5950",
+      "bytes": 9395,
+      "snapshot_url": "https://docs.typesafe.ai/model-jaggedness/jev-1.13.md",
+      "line_anchors": {}
+    },
+    {
+      "id": "DMC1",
+      "url": "https://huggingface.co/Cloudflare/clef/blob/0b331204bb13fbd2ca93a64df1956f5b55478ce5/README.md",
+      "snapshot_sha256": "16ee04d296b1ef5edcdb3c4d3d3cd369acdc627fb5d255b34264a73e224d821a",
+      "bytes": 11105,
+      "pinned_content_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "DMC2",
+      "url": "https://huggingface.co/Cloudflare/clef/blob/0b331204bb13fbd2ca93a64df1956f5b55478ce5/joint_schema_model.py",
+      "snapshot_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+      "bytes": 23263,
+      "pinned_content_verified": true,
+      "line_anchors": {
+        "max_length: int = 16384": [
+          106,
+          547
+        ],
+        "state_ids = state_ids[:": [
+          164,
+          170
+        ],
+        "class ClefModel": [
+          462
+        ],
+        "def forward(self, batch": [
+          468
+        ]
+      }
+    },
+    {
+      "id": "DMC3",
+      "url": "https://developers.cloudflare.com/workers-ai/models/clef/",
+      "snapshot_sha256": "22b2fe7606c4898b01079353f7c4d4e075f1738f3c29163c83e09dda86c6645a",
+      "bytes": 166077,
+      "line_anchors": {}
+    },
+    {
+      "id": "DMC4",
+      "url": "https://huggingface.co/Cloudflare/clef-flash/blob/8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3/README.md",
+      "snapshot_sha256": "53a3dc4ac96a1b2f17e6c03d9cf19a50b25ddad8d270fbe655902f6ce68bb4b5",
+      "bytes": 11132,
+      "pinned_content_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "DMO1",
+      "url": "https://github.com/manjunathshiva/opendecider/blob/7873aa45dbed68ba75f419bf21d0dfd1f09ded5d/opendecider/nano.py",
+      "snapshot_sha256": "bb344ec5008ade21c0abc231dc709d75550887e74761f93d957c125068446c19",
+      "bytes": 3350,
+      "commit": "7873aa45dbed68ba75f419bf21d0dfd1f09ded5d",
+      "path": "opendecider/nano.py",
+      "git_blob_sha1": "c47bdfd483fff06fdb627a1fbcc5875d60e585cf",
+      "pinned_blob_verified": true,
+      "line_anchors": {
+        "max_len: int = 2048": [
+          19
+        ],
+        "def decide_many": [
+          46
+        ],
+        "torch.softmax": [
+          62
+        ]
+      }
+    },
+    {
+      "id": "DMO2",
+      "url": "https://huggingface.co/manjunathshiva/opendecider-nano/blob/1e1f0a7322e446c5ae9bbe840df11680f18a752a/README.md",
+      "snapshot_sha256": "a6d75a6efd43b02e2911c1d3de81f8ee8f9be55fb3a3f48a892f457e9ef2853e",
+      "bytes": 19532,
+      "pinned_content_verified": true,
+      "line_anchors": {
+        "English only": [
+          294
+        ],
+        "0.8 GB": [
+          54,
+          234
+        ],
+        "2,048": [
+          220,
+          231
+        ]
+      }
+    },
+    {
+      "id": "DMN1",
+      "url": "https://github.com/deepanwadhwa/OpenDecision/blob/cbd0b50db42bba6975f342de1789fb3c8f2dc670/src/opendecision/engine.py",
+      "snapshot_sha256": "a3126c6929a038270716331884ea91fbc0889e2e7a06e56c000598d1c11d4d68",
+      "bytes": 16223,
+      "commit": "cbd0b50db42bba6975f342de1789fb3c8f2dc670",
+      "path": "src/opendecision/engine.py",
+      "git_blob_sha1": "30b5a3bef2f0a96b426dcc1a2ab12958eca3824f",
+      "pinned_blob_verified": true,
+      "line_anchors": {
+        "DEFAULT_MODEL =": [
+          10
+        ],
+        "Confidence derived": [
+          57
+        ],
+        "def _nli_max_length": [
+          403
+        ]
+      }
+    },
+    {
+      "id": "DMN2",
+      "url": "https://github.com/deepanwadhwa/OpenDecision/blob/cbd0b50db42bba6975f342de1789fb3c8f2dc670/src/opendecision/documents.py",
+      "snapshot_sha256": "9c2fb93b68f3280b6b45d2f0e76c84d5f7b40e9e09d24cec848f3572f63205eb",
+      "bytes": 13133,
+      "commit": "cbd0b50db42bba6975f342de1789fb3c8f2dc670",
+      "path": "src/opendecision/documents.py",
+      "git_blob_sha1": "3a5a2894ee4210f618a9ac2741f3a76ffe4f8ad4",
+      "pinned_blob_verified": true,
+      "line_anchors": {
+        "DEFAULT_CHUNK_TOKENS =": [
+          11
+        ],
+        "def _evidence": [
+          201
+        ]
+      }
+    },
+    {
+      "id": "DMN3",
+      "url": "https://github.com/deepanwadhwa/OpenDecision/blob/cbd0b50db42bba6975f342de1789fb3c8f2dc670/README.md",
+      "snapshot_sha256": "cb736a3d456cc5520a9bb1761bf6da8244131acef2ee72e786d7c9e9ef55a947",
+      "bytes": 11765,
+      "commit": "cbd0b50db42bba6975f342de1789fb3c8f2dc670",
+      "path": "README.md",
+      "git_blob_sha1": "a2abbeab057f43a56bfa110a490795b78af25ecf",
+      "pinned_blob_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "DMJ1",
+      "url": "https://huggingface.co/openjev/openjev/blob/b4a89f5884f3482a5e894b2e7ff01db8ea033726/README.md",
+      "snapshot_sha256": "bff7f9971c9c8f4c5a7ef346640b1c242060ef92f06d41f49c3e37e74b930bd5",
+      "bytes": 13007,
+      "pinned_content_verified": true,
+      "line_anchors": {}
+    },
+    {
+      "id": "H1",
+      "url": "https://arxiv.org/abs/2305.20050",
+      "snapshot_sha256": "a1838b7cf38ebf2bc2ae7828c256bd8557c682bc6eb860caca61cfc2c9e81989",
+      "bytes": 157479,
+      "snapshot_url": "https://arxiv.org/html/2305.20050",
+      "line_anchors": {}
+    },
+    {
+      "id": "H2",
+      "url": "https://arxiv.org/abs/2403.13787",
+      "snapshot_sha256": "162a4980b9c353147f82acc7e48e129fa8e4362143c7bfdc330f3eec0cdbf54d",
+      "bytes": 849983,
+      "snapshot_url": "https://arxiv.org/html/2403.13787",
+      "line_anchors": {}
+    },
+    {
+      "id": "H3",
+      "url": "https://arxiv.org/abs/2503.12532",
+      "snapshot_sha256": "8e8e2b24428726813bf9771a14464377c51753be8bfc355a76076aa3d36100ae",
+      "bytes": 225051,
+      "snapshot_url": "https://arxiv.org/html/2503.12532",
+      "line_anchors": {}
+    },
+    {
+      "id": "H4",
+      "url": "https://arxiv.org/abs/2504.08942",
+      "snapshot_sha256": "94fbad3d8156ef038b62add7eea383579f314adbd5d9c040f7fd281e189a6b2e",
+      "bytes": 772386,
+      "snapshot_url": "https://arxiv.org/html/2504.08942",
+      "line_anchors": {}
+    }
+  ],
+  "additional_sources": [
+    {
+      "url": "https://huggingface.co/Cloudflare/clef-flash/blob/8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3/README.md",
+      "snapshot_sha256": "53a3dc4ac96a1b2f17e6c03d9cf19a50b25ddad8d270fbe655902f6ce68bb4b5",
+      "bytes": 11132
+    },
+    {
+      "url": "https://github.com/manjunathshiva/opendecider/blob/7873aa45dbed68ba75f419bf21d0dfd1f09ded5d/opendecider/small.py",
+      "snapshot_sha256": "31955ed57cbbc9a99c684b39251510463a9958b65ed8024f111b77ee564e044d",
+      "bytes": 6528
+    },
+    {
+      "url": "https://huggingface.co/openjev/openjev/blob/b4a89f5884f3482a5e894b2e7ff01db8ea033726/helper/shim.py",
+      "snapshot_sha256": "81a22f1b1b8912a465059207ef9f60b7c6c16b4de6372305d867efbe38a1987a",
+      "bytes": 26080
+    },
+    {
+      "url": "https://github.com/echo0715/OpenComputer/blob/76c5ec32221045a68c4ca47a799e0abc4b303d6a/evaluation/runtime/run_config.py",
+      "snapshot_sha256": "52270d6edd13537ff6b64b70583f11bb2a906379369d29ac4017897b4ce50586",
+      "bytes": 744
+    }
+  ],
+  "local_experiments": [
+    "opencomputer-offline-smoke.json",
+    "officebench-function-smoke.json"
+  ]
+}

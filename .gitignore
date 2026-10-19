@@ -1,0 +1,9 @@
+node_modules/
+dist/
+data/
+.env
+*.log
+artifacts/
+build/
+.native-test/
+.DS_Store

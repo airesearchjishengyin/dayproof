@@ -1,0 +1,44 @@
+{
+  "name": "dayproof",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "A local-first daily planner with evidence-based completion and MCP integration.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsx watch src/server/index.ts",
+    "start": "tsx src/server/index.ts",
+    "build": "tsc --noEmit && vite build",
+    "test": "tsx --test tests/*.test.ts",
+    "mcp": "tsx src/server/mcp.ts",
+    "desktop:build": "python3 scripts/build_macos.py",
+    "desktop": "open build/Dayproof.app",
+    "desktop:test": "python3 tests/native_smoke.py",
+    "format": "prettier --write src tests/*.ts vite.config.ts tsconfig.json package.json",
+    "format:check": "prettier --check src tests/*.ts vite.config.ts tsconfig.json package.json"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.0",
+    "better-sqlite3": "^11.8.1",
+    "express": "^4.21.2",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "prettier": "^3.9.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

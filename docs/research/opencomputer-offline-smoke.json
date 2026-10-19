@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-19",
+  "python": "3.11",
+  "source": "https://raw.githubusercontent.com/echo0715/OpenComputer/76c5ec32221045a68c4ca47a799e0abc4b303d6a/verifiers/libreoffice_writer/libreoffice_writer.py",
+  "source_sha256": "83215f785f996f0fcf74b49ec35e4caa8fc0da62804d1352e8fa2e5edf7e2f5e",
+  "scope": "Offline methods on a synthetic minimal ODT XML ZIP; no GUI, UNO, E2B or LLM integration. No network during verifier execution.",
+  "checks": {
+    "offline_text_extracts_body": true,
+    "offline_paragraphs_preserve_heading_order": true,
+    "offline_tables_extract_owner": true,
+    "missing_file_not_exists": true,
+    "corrupt_file_returns_error": true
+  },
+  "observed_limitations": {
+    "parse_file_text_moves_heading_after_body": true,
+    "parse_file_text_omits_table_cell": true
+  },
+  "extract": "实施步骤：先部署测试环境，再运行验收。\n技术方案",
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "技术方案",
+      "style": "",
+      "heading": true,
+      "level": 1
+    },
+    {
+      "index": 1,
+      "text": "实施步骤：先部署测试环境，再运行验收。",
+      "style": ""
+    }
+  ],
+  "tables": [
+    {
+      "name": "Actions",
+      "rows": 1,
+      "cols": 1,
+      "data": [
+        [
+          "负责人：Alice"
+        ]
+      ]
+    }
+  ]
+}

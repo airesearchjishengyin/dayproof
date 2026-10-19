@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-19",
+  "source": "https://raw.githubusercontent.com/zlwang-cs/OfficeBench/b978b808667c32b52ce19a67ce1def1de9ae02b7/utils/evaluate.py",
+  "source_sha256": "f4a675a590a57844fd21d6d6660a00d8c69661b0f92dc26146f9b8869a26cc90",
+  "scope": "Four AST-extracted upstream functions; synthetic TXT inputs; no app, email, model or full-suite run.",
+  "observed_behaviours": {
+    "missing_file_passes_not_contain_in_isolation": true,
+    "negated_requirements_pass_literal_keywords": true
+  },
+  "negative_input": "There is no implementation plan and no acceptance test.",
+  "interpretation": "Require a separate file/readability check; substring matching proves lexical presence only. A composed upstream task may already add other checks."
+}

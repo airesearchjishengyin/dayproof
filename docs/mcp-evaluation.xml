@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Read-only evaluation against the fixed fixture described in mcp-fixture.md.
+     These are authored scenarios, not claims of a completed LLM benchmark. -->
+<evaluation>
+  <qa_pair><question>For the fixed fixture, page through all tasks on 2026-10-19 with limit 2. How many unfinished tasks have automatic verification configured? Return an integer.</question><answer>4</answer></qa_pair>
+  <qa_pair><question>Compare the planned minutes on 2026-10-19 and 2026-10-20, including completed tasks. Which date has more planned work? Answer YYYY-MM-DD.</question><answer>2026-10-19</answer></qa_pair>
+  <qa_pair><question>Among tasks on 2026-10-19 that came from Claude Code, is every completed task independently verified by a rule? Answer true or false.</question><answer>false</answer></qa_pair>
+  <qa_pair><question>Across all fixture dates, which task uses a model for review but has automatic completion disabled? Answer with the exact title.</question><answer>Review design memo</answer></qa_pair>
+  <qa_pair><question>Which unfinished high priority task on 2026-10-19 has the earliest deadline when comparing absolute instants including offsets? Return the title.</question><answer>Confirm subscription</answer></qa_pair>
+  <qa_pair><question>Across the fixed fixture, how many total unfinished minutes come from Codex? Return an integer.</question><answer>180</answer></qa_pair>
+  <qa_pair><question>Read both dates and find the completed task whose completion was automatic rather than manually confirmed. Return its exact title.</question><answer>CI evidence</answer></qa_pair>
+  <qa_pair><question>For 2026-10-19, sum planned minutes for tasks whose latest verdict requires human review, excluding pending and error verdicts. Return an integer.</question><answer>45</answer></qa_pair>
+  <qa_pair><question>Which task checks that a JSON boolean is true, rather than requiring the string active? Use both dates. Return the exact title.</question><answer>Confirm subscription</answer></qa_pair>
+  <qa_pair><question>Across both dates, which task has a latest error verdict and is still unfinished, illustrating that a failed check is not completion? Return its title.</question><answer>Load report</answer></qa_pair>
+</evaluation>
