@@ -29,7 +29,9 @@
 
 如果你平时用 Codex、Claude Code，也可以通过 MCP 让它们把计划写进来，少在几个工具之间来回复制。
 
-现在已经开源，任务保存在本机，MIT 许可。目前支持 macOS 13+，还是早期版本，需要从源码构建。
+现在已经在 GitHub 开源，MIT 许可。暂时不走 App Store，先把自己每天用的小工具慢慢打磨好。
+
+界面最低目标是 macOS 13，目前在 Apple Silicon Mac 上实测。还是早期预览版，需要从源码构建，暂时没有一键安装包；不用购买 Apple 开发者会员，也不用为了后台检查准备 API key。任务保存在本机，主动接入外部 AI 工具时，相关数据处理取决于你自己的配置。
 
 项目地址：
 https://github.com/airesearchjishengyin/dayproof
@@ -47,3 +49,9 @@ https://github.com/airesearchjishengyin/dayproof
 4. 收尾：代码验收、数据本地保存、MIT 开源，附项目名称。
 
 仓库 `docs/images/` 中有原生界面的测试数据截图，可作为素材。不要把测试用的订阅 JSON 截图包装成真实账号状态自动识别；目前没有这项连接能力。本文为发布草稿，未发布到小红书。
+
+## 短版（适合项目分享）
+
+做了个开源 Mac 小工具 Dayproof：日计划能悬浮在桌面上，旁边还有一只可以摸摸的小猫。为任务约定文件、JSON 或清单条件，代码检查通过就自动打勾；需要自己判断的事情手动确认，后台不循环调用大模型。现在是需要源码构建的早期预览版，欢迎试用、提建议。
+
+https://github.com/airesearchjishengyin/dayproof
