@@ -12,6 +12,8 @@ APP = BUILD / 'Dayproof.app'
 CONTENTS = APP / 'Contents'
 RESOURCES = CONTENTS / 'Resources'
 BACKEND = RESOURCES / 'backend'
+ICONSET = BUILD / 'AppIcon.iconset'
+ICON_TOOL = BUILD / 'make_app_icon'
 
 def run(*args, cwd=ROOT):
     subprocess.run([str(a) for a in args], cwd=cwd, check=True)
@@ -21,6 +23,11 @@ if os.uname().sysname != 'Darwin':
 run('npm', 'run', 'build')
 CONTENTS.joinpath('MacOS').mkdir(parents=True, exist_ok=True)
 BACKEND.mkdir(parents=True, exist_ok=True)
+shutil.rmtree(ICONSET, ignore_errors=True)
+run('swiftc', '-parse-as-library', ROOT / 'scripts/make_icon.swift', ROOT / 'native/Sources/CatDrawing.swift', '-o', ICON_TOOL, cwd=ROOT)
+run(ICON_TOOL, ICONSET)
+run('iconutil', '-c', 'icns', ICONSET, '-o', RESOURCES / 'AppIcon.icns')
+shutil.rmtree(ICONSET)
 # Ship the same Node runtime whose ABI the SQLite module was built against.
 node = Path(shutil.which('node')).resolve()
 shutil.copy2(node, RESOURCES / 'node')
@@ -46,6 +53,7 @@ plist = {
     'CFBundleIdentifier': 'app.dayproof.desktop', 'CFBundleExecutable': 'Dayproof',
     'CFBundlePackageType': 'APPL', 'CFBundleShortVersionString': '0.2.0',
     'CFBundleVersion': '2', 'LSMinimumSystemVersion': '13.0',
+    'CFBundleIconFile': 'AppIcon',
     'NSHighResolutionCapable': True, 'NSPrincipalClass': 'NSApplication',
     'NSHumanReadableCopyright': 'Dayproof contributors. MIT. Includes AgentPet MIT components.',
 }
