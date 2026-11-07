@@ -16,6 +16,8 @@
   <a href="https://github.com/airesearchjishengyin/dayproof/issues">反馈与建议</a>
 </p>
 
+[![M8ven Verified](https://m8ven.ai/badge/mcp/airesearchjishengyin-dayproof-11fqxh?variant=verified&v=c8815b96904c065d9e102952f2841a8b)](https://m8ven.ai/mcp/airesearchjishengyin-dayproof-11fqxh?s=readme)
+
 ![Dayproof 原生 macOS 计划界面（独立演示数据）](docs/images/native-planner.png)
 
 > **早期源码预览版。** 当前需要自行构建，尚无签名、公证的安装包；不需要 App Store 或 Apple Developer 付费会员。截图使用独立演示数据，不代表真实账号、订阅查询或第三方应用连接。
