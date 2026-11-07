@@ -13,7 +13,7 @@ import type { Task } from "../src/shared/schema.ts";
 test(
   "real HTTP, SQLite, scheduler and MCP workflow",
   { timeout: 45000 },
-  async () => {
+  async (t) => {
     const dir = await mkdtemp(join(tmpdir(), "dayproof-integration-"));
     const socket = createServer();
     socket.listen(0, "127.0.0.1");
@@ -148,6 +148,52 @@ test(
       );
       const list = await client.listTools();
       assert.equal(list.tools.length, 4);
+      await t.test("all MCP tools declare four boolean behavior hints", () => {
+        const expected = {
+          dayproof_list_tasks: {
+            readOnlyHint: true,
+            destructiveHint: false,
+            idempotentHint: true,
+            openWorldHint: false,
+          },
+          dayproof_create_plan: {
+            readOnlyHint: false,
+            destructiveHint: false,
+            idempotentHint: false,
+            openWorldHint: false,
+          },
+          dayproof_check_task: {
+            readOnlyHint: false,
+            destructiveHint: false,
+            idempotentHint: false,
+            openWorldHint: false,
+          },
+          dayproof_update_task: {
+            readOnlyHint: false,
+            destructiveHint: true,
+            idempotentHint: false,
+            openWorldHint: false,
+          },
+        };
+        assert.deepEqual(
+          list.tools.map((tool) => tool.name).sort(),
+          Object.keys(expected).sort(),
+        );
+        for (const tool of list.tools) {
+          for (const hint of [
+            "readOnlyHint",
+            "destructiveHint",
+            "idempotentHint",
+            "openWorldHint",
+          ] as const) {
+            assert.equal(typeof tool.annotations?.[hint], "boolean");
+          }
+          assert.deepEqual(
+            tool.annotations,
+            expected[tool.name as keyof typeof expected],
+          );
+        }
+      });
       const planned = await client.callTool({
         name: "dayproof_create_plan",
         arguments: {
@@ -198,6 +244,76 @@ test(
       assert.equal(
         JSON.parse((codeCheck.content as { text: string }[])[0].text).status,
         "done",
+      );
+      await t.test(
+        "dayproof_update_task replaces the plan and resets completion and verdict",
+        async () => {
+          const before = (await request("/state")).data.tasks.find(
+            (task: Task) => task.id === codeTask.id,
+          ) as Task;
+          assert.ok(before.lastCheck);
+          const replacement = {
+            title: "重新评审游戏进展",
+            day,
+            criteria: "用户确认新的评审标准",
+            rule: { type: "manual" },
+          };
+          const updated = await client!.callTool({
+            name: "dayproof_update_task",
+            arguments: { id: codeTask.id, task: replacement },
+          });
+          assert.notEqual(updated.isError, true);
+          const result = JSON.parse(
+            (updated.content as { text: string }[])[0].text,
+          );
+          assert.equal(result.id, codeTask.id);
+          assert.equal(result.title, replacement.title);
+          assert.equal(result.status, "todo");
+          assert.equal(result.lastCheck, null);
+          assert.equal(result.nextCheckAt, null);
+          const stored = (await request("/state")).data.tasks.find(
+            (task: Task) => task.id === codeTask.id,
+          ) as Task;
+          assert.equal(stored.criteria, replacement.criteria);
+          assert.equal(stored.rule.type, "manual");
+          assert.equal(stored.completedAt, null);
+          assert.equal(stored.completionSource, null);
+          assert.equal(stored.createdAt, before.createdAt);
+          assert.equal(stored.revision, before.revision + 1);
+          const repeated = await client!.callTool({
+            name: "dayproof_update_task",
+            arguments: { id: codeTask.id, task: replacement },
+          });
+          assert.notEqual(repeated.isError, true);
+          assert.equal(
+            (await request("/state")).data.tasks.find(
+              (task: Task) => task.id === codeTask.id,
+            ).revision,
+            stored.revision + 1,
+          );
+          const missing = await client!.callTool({
+            name: "dayproof_update_task",
+            arguments: {
+              id: "00000000-0000-4000-8000-000000000000",
+              task: replacement,
+            },
+          });
+          assert.equal(missing.isError, true);
+          const invalid = await client!.callTool({
+            name: "dayproof_update_task",
+            arguments: {
+              id: codeTask.id,
+              task: { ...replacement, title: "" },
+            },
+          });
+          assert.equal(invalid.isError, true);
+          assert.equal(
+            (await request("/state")).data.tasks.find(
+              (task: Task) => task.id === codeTask.id,
+            ).revision,
+            stored.revision + 1,
+          );
+        },
       );
       const legacy = await request("/tasks", "POST", {
         title: "旧模型任务",

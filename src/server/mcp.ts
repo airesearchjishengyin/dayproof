@@ -43,12 +43,6 @@ const server = new McpServer(
       "Use dayproof to persist user-approved daily plans. First list tasks to avoid duplicates. Create tasks with explicit timezone deadlines and acceptance criteria. Evidence files must be within the configured EVIDENCE_ROOT. Verification uses code only, never LLMs. README/checklist declarations are acceptable only when the user chooses declaration-based acceptance; never label them as runtime proof. Reading-note and email-draft structure checks default to human confirmation; autoComplete requires the user to accept those artifact criteria. Use check_task for verification; manual completion requires user confirmation.",
   },
 );
-const write = {
-  readOnlyHint: false,
-  destructiveHint: false,
-  idempotentHint: false,
-  openWorldHint: false,
-};
 function summary(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(summary);
   const t = value as Task;
@@ -91,7 +85,12 @@ server.registerTool(
       offset: z.number().int().min(0).default(0),
       limit: z.number().int().min(1).max(50).default(20),
     },
-    annotations: { readOnlyHint: true, openWorldHint: false },
+    annotations: {
+      readOnlyHint: true,
+      destructiveHint: false,
+      idempotentHint: true,
+      openWorldHint: false,
+    },
   },
   async ({ day, offset, limit }) =>
     safe(async () => {
@@ -114,7 +113,12 @@ server.registerTool(
     description:
       "Atomically create 1–50 tasks from a plan. Include day, explicit timezone deadline, acceptance criteria, and optional file/JSON/markdown_checklist/reading_notes/email_draft verification rule. Local-model verification is disabled; use manual for semantic checks. source should identify the caller, e.g. Codex or Claude Code. Returns created task IDs.",
     inputSchema: { tasks: z.array(TaskInput).min(1).max(50) },
-    annotations: write,
+    annotations: {
+      readOnlyHint: false,
+      destructiveHint: false,
+      idempotentHint: false,
+      openWorldHint: false,
+    },
   },
   async ({ tasks }) =>
     safe(async () => summary(await api("/api/plan/import", "POST", { tasks }))),
@@ -125,7 +129,12 @@ server.registerTool(
     description:
       "Run the configured evidence checker for a task ID. May mark complete only when its configured rule passes. Missing evidence stays pending; semantic questions and legacy model rules need human review. Does not execute commands or operate subscriptions.",
     inputSchema: { id: z.string().uuid() },
-    annotations: { ...write, idempotentHint: false },
+    annotations: {
+      readOnlyHint: false,
+      destructiveHint: false,
+      idempotentHint: false,
+      openWorldHint: false,
+    },
   },
   async ({ id }) =>
     safe(async () => summary(await api(`/api/tasks/${id}/check`, "POST", {}))),
@@ -136,7 +145,12 @@ server.registerTool(
     description:
       "Replace a task plan after listing it. Editing resets completion and previous verdict so the revised acceptance criteria must be checked again. Does not accept completion claims.",
     inputSchema: { id: z.string().uuid(), task: TaskInput },
-    annotations: { ...write, idempotentHint: false },
+    annotations: {
+      readOnlyHint: false,
+      destructiveHint: true,
+      idempotentHint: false,
+      openWorldHint: false,
+    },
   },
   async ({ id, task }) =>
     safe(async () => summary(await api(`/api/tasks/${id}`, "PUT", task))),
